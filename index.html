@@ -1,1 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Coherent and Reversible AI-assisted XR Scene Authoring by Spatial Dependency Graphs
+    </title>
+
+    <meta
+        name="description"
+        content="Project page for Coherent and Reversible AI-assisted XR Scene Authoring by Spatial Dependency Graphs."
+    >
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #ffffff;
+            color: #222;
+            line-height: 1.65;
+        }
+
+        a {
+            color: #1565c0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           PAGE WIDTH
+        ========================== */
+
+        .container {
+            width: min(1050px, 90%);
+            margin: 0 auto;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            text-align: center;
+            padding: 70px 0 45px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            line-height: 1.15;
+            margin: 0 auto 25px;
+            max-width: 1050px;
+            font-weight: 750;
+            letter-spacing: -0.03em;
+        }
+
+
+        /* =========================
+           AUTHORS
+        ========================== */
+
+        .authors {
+            font-size: 1.12rem;
+            margin-top: 16px;
+            line-height: 1.8;
+        }
+
+        .authors a {
+            margin: 0 3px;
+        }
+
+        .affiliations {
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.98rem;
+        }
+
+        .venue {
+            margin-top: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .buttons {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: #222;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            background: #444;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            margin: 75px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+        }
+
+        section h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .section-text {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.04rem;
+        }
+
+
+        /* =========================
+           FIGURES
+        ========================== */
+
+        .figure {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+
+        .figure-medium {
+            width: min(850px, 100%);
+            display: block;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+
+        .caption {
+            max-width: 900px;
+            text-align: center;
+            margin: 14px auto 0;
+            color: #666;
+            font-size: 0.94rem;
+        }
+
+
+        /* =========================
+           TAGLINE
+        ========================== */
+
+        .tagline {
+            max-width: 900px;
+            margin: 30px auto 0;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 1.55;
+            font-weight: 500;
+        }
+
+
+        /* =========================
+           OVERVIEW FLOW
+        ========================== */
+
+        .flow {
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .flow-box {
+            padding: 15px 18px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #fafafa;
+            font-weight: 600;
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .flow-arrow {
+            font-size: 1.4rem;
+            color: #777;
+        }
+
+
+        /* =========================
+           FEATURE CARDS
+        ========================== */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            border: 1px solid #e4e4e4;
+            border-radius: 12px;
+            padding: 25px;
+            background: #fafafa;
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+        }
+
+        .feature-card p {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           HIGHLIGHT BOX
+        ========================== */
+
+        .highlight {
+            padding: 28px;
+            margin: 35px auto;
+            max-width: 900px;
+            border-left: 4px solid #222;
+            background: #f6f6f6;
+            border-radius: 6px;
+        }
+
+
+        /* =========================
+           SYSTEM
+        ========================== */
+
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 35px;
+        }
+
+        .system-item {
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px 10px;
+            background: #fafafa;
+        }
+
+        .system-item strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+
+        /* =========================
+           STUDY
+        ========================== */
+
+        .study-box {
+            max-width: 750px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .study-number {
+            font-size: 2.6rem;
+            font-weight: 750;
+            margin-bottom: 0;
+        }
+
+        .study-label {
+            color: #666;
+            margin-top: 0;
+        }
+
+
+        /* =========================
+           BIBTEX
+        ========================== */
+
+        pre {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 25px;
+            overflow-x: auto;
+            background: #f3f3f3;
+            border-radius: 10px;
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                "Liberation Mono",
+                monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            margin-top: 90px;
+            padding: 35px 0;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                padding-top: 45px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .system-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .system-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <h1>
+            Coherent and Reversible AI-assisted XR Scene Authoring
+            by Spatial Dependency Graphs
+        </h1>
+
+        <div class="authors">
+
+            <a href="#">
+                Mine Dastan
+            </a>,
+
+            <a href="#">
+                Dongyu Qiu
+            </a>,
+
+            <a href="#">
+                Haiyan Jiang
+            </a>,
+
+            <a href="#">
+                Michele Fiorentino
+            </a>,
+
+            <a href="#">
+                Frank Guan
+            </a>
+
+        </div>
+
+
+        <div class="affiliations">
+
+            Polytechnic University of Bari ·
+            Singapore Institute of Technology ·
+            Hong Kong Polytechnic University
+
+        </div>
+
+
+        <div class="venue">
+            Conference / Venue, 2026
+        </div>
+
+
+        <div class="buttons">
+
+            <a
+                class="button"
+                href="assets/paper.pdf"
+                target="_blank"
+            >
+                Paper
+            </a>
+
+            <a
+                class="button"
+                href="#"
+                target="_blank"
+            >
+                Video
+            </a>
+
+            <a
+                class="button"
+                href="#"
+                target="_blank"
+            >
+                Code
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- =========================================================
+     TEASER
+========================================================= -->
+
+<section>
+
+    <img
+        class="figure"
+        src="assets/teaser.png"
+        alt="Storyboard of coherent and reversible AI-assisted XR scene authoring"
+    >
+
+    <p class="tagline">
+
+        Spatial Dependency Graphs enable AI-assisted XR authoring
+        systems to preserve inter-object relationships while scenes are
+        created, modified, deleted, and reversed.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABSTRACT
+========================================================= -->
+
+<section id="abstract">
+
+    <h2>Abstract</h2>
+
+    <div class="section-text">
+
+        <p>
+            Extended reality and AI-assisted authoring systems are
+            making immersive content creation increasingly accessible.
+            However, current approaches often focus on interpreting and
+            executing user commands without explicitly representing
+            dependencies between objects.
+        </p>
+
+        <p>
+            We introduce a <strong>Spatial Dependency Graph (SDG)</strong>
+            that represents support dependencies using scene geometry
+            and object-type semantics. The SDG determines how actions
+            affecting support objects propagate to dependent objects,
+            enabling three coherent behaviors:
+            <strong>co-motion</strong>,
+            <strong>re-support</strong>, and
+            <strong>removal</strong>.
+        </p>
+
+        <p>
+            The SDG is integrated with a reversible action-history
+            mechanism that stores both direct actions and their
+            propagated effects, allowing users to restore previous
+            coherent scene states through undo, redo, or timeline-based
+            navigation.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OVERVIEW
+========================================================= -->
+
+<section id="overview">
+
+    <h2>System Overview</h2>
+
+    <div class="flow">
+
+        <div class="flow-box">
+            User Input
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-box">
+            Structured Action
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-box">
+            Spatial Dependency Graph
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-box">
+            Coherent Scene Update
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-box">
+            Reversible History
+        </div>
+
+    </div>
+
+
+    <img
+        class="figure-medium"
+        src="assets/pipeline.png"
+        alt="Spatial Dependency Graph authoring pipeline"
+    >
+
+
+    <p class="caption">
+
+        User input is converted into a structured action before the
+        Spatial Dependency Graph determines how the action propagates
+        through the scene.
+
+    </p>
+
+
+    <div class="highlight">
+
+        <strong>
+            The language model interprets user intent,
+            but it does not decide how spatial dependencies are resolved.
+        </strong>
+
+        <br><br>
+
+        Dependency propagation is handled by the Spatial Dependency
+        Graph using deterministic geometric and semantic rules.
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SPATIAL DEPENDENCY GRAPH
+========================================================= -->
+
+<section id="sdg">
+
+    <h2>Spatial Dependency Graph</h2>
+
+    <div class="section-text">
+
+        <p>
+
+            The SDG represents directed
+            <strong>supportedBy</strong> relationships between scene
+            objects.
+
+            A support relationship is created when a dependent object
+            is geometrically aligned with a potential support surface
+            and the two object types are semantically compatible.
+
+        </p>
+
+        <p>
+
+            In the current implementation, a dependency is established
+            when the vertical gap is within
+            <strong>5 cm</strong>, the objects' X/Z footprints overlap
+            by at least <strong>1 cm</strong>, and the candidate support
+            is semantically compatible with the dependent object.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CASCADE MODES
+========================================================= -->
+
+<section id="cascade">
+
+    <h2>Dependency-aware Scene Editing</h2>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature-card">
+
+            <h3>Co-motion</h3>
+
+            <p>
+                When a support object is translated, rotated, or scaled,
+                its dependent objects move with it while preserving
+                their relative spatial relationships.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <h3>Re-support</h3>
+
+            <p>
+                When the original support object is deleted, the system
+                searches the remaining scene for another geometrically
+                and semantically compatible support surface.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <h3>Removal</h3>
+
+            <p>
+                If no compatible support remains, the dependent object
+                is removed from the active scene rather than being left
+                floating or semantically misplaced.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     REVERSIBILITY
+========================================================= -->
+
+<section id="reverse">
+
+    <h2>Coherent and Reversible Authoring</h2>
+
+    <div class="section-text">
+
+        <p>
+
+            Each user action is recorded together with all effects
+            propagated through the dependency graph.
+
+            If moving a table also moves a lamp, or deleting a table
+            causes the lamp to be reassigned to another support, these
+            consequences are stored as part of the same action.
+
+        </p>
+
+        <p>
+
+            Users can therefore move backward or forward through the
+            authoring timeline while restoring complete coherent scene
+            states rather than reversing isolated object
+            transformations.
+
+        </p>
+
+    </div>
+
+
+    <img
+        class="figure-medium"
+        src="assets/timeline.png"
+        alt="Reversible action timeline"
+    >
+
+</section>
+
+
+
+<!-- =========================================================
+     IMPLEMENTATION
+========================================================= -->
+
+<section id="implementation">
+
+    <h2>Implementation</h2>
+
+
+    <div class="system-grid">
+
+
+        <div class="system-item">
+
+            <strong>
+                XR
+            </strong>
+
+            Meta Quest 3
+
+        </div>
+
+
+        <div class="system-item">
+
+            <strong>
+                Engine
+            </strong>
+
+            Unity3D
+
+        </div>
+
+
+        <div class="system-item">
+
+            <strong>
+                Language Model
+            </strong>
+
+            GPT-4o mini
+
+        </div>
+
+
+        <div class="system-item">
+
+            <strong>
+                Interaction
+            </strong>
+
+            Language + Direct Manipulation
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PRELIMINARY STUDY
+========================================================= -->
+
+<section id="study">
+
+    <h2>Preliminary Feasibility Study</h2>
+
+
+    <div class="study-box">
+
+        <p class="study-number">
+            82.5 / 100
+        </p>
+
+        <p class="study-label">
+            Mean adapted SUS score
+        </p>
+
+        <p>
+
+            Two participants completed guided scenarios involving
+            scene composition, co-motion, re-support, removal, and
+            reverse operations.
+
+        </p>
+
+        <p>
+
+            The evaluation should be interpreted as preliminary
+            feasibility feedback rather than as statistically
+            generalizable evidence of usability.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VIDEO
+========================================================= -->
+
+<section id="video">
+
+    <h2>Video</h2>
+
+    <div class="section-text" style="text-align:center;">
+
+        <p>
+
+            A supplementary video demonstrates the authoring workflow
+            and the preliminary feasibility-study experience.
+
+        </p>
+
+        <!--
+
+        Replace this with your YouTube embed when available.
+
+        Example:
+
+        <iframe
+            width="900"
+            height="506"
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="Video"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+        -->
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BIBTEX
+========================================================= -->
+
+<section id="citation">
+
+    <h2>Citation</h2>
+
+<pre>
+@inproceedings{dastan2026sdg,
+    title     = {Coherent and Reversible AI-assisted XR Scene Authoring
+                 by Spatial Dependency Graphs},
+    author    = {Dastan, Mine and Qiu, Dongyu and Jiang, Haiyan
+                 and Fiorentino, Michele and Guan, Frank},
+    booktitle = {Conference Name},
+    year      = {2026}
+}
+</pre>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        Coherent and Reversible AI-assisted XR Scene Authoring
+        by Spatial Dependency Graphs · 2026
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
