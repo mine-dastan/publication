@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Dynamic, Static, or None? Virtual Magnification Loupe Designs
+        for High Precision Tool Manipulation: A Dental Case Study
+    </title>
+
+    <meta
+        name="description"
+        content="ISMAR 2026 Conference Paper - Dynamic, Static, or None? Virtual Magnification Loupe Designs for High Precision Tool Manipulation: A Dental Case Study."
+    >
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #ffffff;
+
+            color: #222;
+
+            line-height: 1.6;
+        }
+
+
+        .container {
+
+            width: min(1100px, 92%);
+
+            margin: 0 auto;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+
+            text-align: center;
+
+            padding: 70px 0 40px;
+        }
+
+
+        .paper-type {
+
+            font-size: 1rem;
+
+            font-weight: 600;
+
+            color: #666;
+
+            margin-bottom: 18px;
+        }
+
+
+        h1 {
+
+            max-width: 1050px;
+
+            margin: 0 auto 22px;
+
+            font-size: clamp(2rem, 4.7vw, 3.4rem);
+
+            line-height: 1.15;
+
+            letter-spacing: -0.03em;
+        }
+
+
+        .venue {
+
+            margin-top: 12px;
+
+            font-size: 1.08rem;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .buttons {
+
+            margin-top: 30px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        .button {
+
+            display: inline-block;
+
+            padding: 11px 21px;
+
+            border-radius: 999px;
+
+            background: #222;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 0.95rem;
+
+            font-weight: 500;
+
+            transition: 0.2s ease;
+        }
+
+
+        .button:hover {
+
+            background: #555;
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================================
+           TEASER
+        ========================================= */
+
+        .teaser-section {
+
+            margin-top: 20px;
+
+            margin-bottom: 80px;
+
+            text-align: center;
+        }
+
+
+        .teaser {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 1100px;
+
+            height: auto;
+
+            margin: 0 auto;
+
+            border-radius: 6px;
+        }
+
+
+        .caption {
+
+            max-width: 900px;
+
+            margin: 18px auto 0;
+
+            color: #666;
+
+            font-size: 0.95rem;
+        }
+
+
+        /* =========================================
+           VIDEO
+        ========================================= */
+
+        .video-section {
+
+            margin: 80px 0;
+
+            text-align: center;
+        }
+
+
+        .video-section h2 {
+
+            font-size: 2rem;
+
+            margin-bottom: 30px;
+
+            letter-spacing: -0.02em;
+        }
+
+
+        .video-wrapper {
+
+            width: min(1000px, 100%);
+
+            margin: 0 auto;
+        }
+
+
+        .video-wrapper video {
+
+            display: block;
+
+            width: 100%;
+
+            border-radius: 10px;
+
+            background: #000;
+        }
+
+
+        /* =========================================
+           SUPPLEMENTARY
+        ========================================= */
+
+        .supplementary-section {
+
+            margin: 90px auto;
+
+            text-align: center;
+        }
+
+
+        .supplementary-section h2 {
+
+            font-size: 2rem;
+
+            margin-bottom: 15px;
+        }
+
+
+        .supplementary-section p {
+
+            max-width: 700px;
+
+            margin: 0 auto 25px;
+
+            color: #555;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            margin-top: 90px;
+
+            padding: 32px 0;
+
+            border-top: 1px solid #eeeeee;
+
+            text-align: center;
+
+            color: #888;
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .hero {
+
+                padding-top: 45px;
+            }
+
+
+            .buttons {
+
+                gap: 8px;
+            }
+
+
+            .button {
+
+                padding: 10px 16px;
+
+                font-size: 0.9rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<header class="hero">
+
+    <div class="container">
+
+
+        <div class="paper-type">
+
+            ISMAR 2026 Conference Paper
+
+        </div>
+
+
+        <h1>
+
+            Dynamic, Static, or None?
+            Virtual Magnification Loupe Designs for High Precision
+            Tool Manipulation: A Dental Case Study
+
+        </h1>
+
+
+        <div class="venue">
+
+            IEEE International Symposium on Mixed and Augmented Reality (ISMAR), 2026
+
+        </div>
+
+
+        <div class="buttons">
+
+
+            <!-- PAPER -->
+
+            <a
+                class="button"
+                href="Submission_ID_1016.pdf"
+                target="_blank"
+            >
+
+                Paper
+
+            </a>
+
+
+            <!-- VIDEO -->
+
+            <a
+                class="button"
+                href="#video"
+            >
+
+                Supplementary Video
+
+            </a>
+
+
+            <!-- SUPPLEMENTARY FILES -->
+
+            <a
+                class="button"
+                href="https://github.com/Vr3xMelab/VMLs_ISMAR26"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                Supplementary Files
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     TEASER
+========================================= -->
+
+<main class="container">
+
+
+    <section class="teaser-section">
+
+
+        <img
+            class="teaser"
+            src="Teaser_figure.png"
+            alt="Dynamic Virtual Loupe, Static Virtual Loupe, and No Loupe conditions"
+        >
+
+
+        <p class="caption">
+
+            Dynamic Virtual Loupe (DVL), Static Virtual Loupe (SVL),
+            and No Loupe (NL) conditions.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         SUPPLEMENTARY VIDEO
+    ========================================= -->
+
+    <section
+        class="video-section"
+        id="video"
+    >
+
+
+        <h2>
+
+            Supplementary Video
+
+        </h2>
+
+
+        <div class="video-wrapper">
+
+
+            <video
+                controls
+                preload="metadata"
+            >
+
+
+                <source
+                    src="Supplementary-video.mp4"
+                    type="video/mp4"
+                >
+
+
+                Your browser does not support HTML5 video.
+
+
+            </video>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         SUPPLEMENTARY FILES
+    ========================================= -->
+
+    <section class="supplementary-section">
+
+
+        <h2>
+
+            Supplementary Materials
+
+        </h2>
+
+
+        <p>
+
+            Additional material associated with the Virtual
+            Magnification Loupe study is available in the project
+            repository.
+
+        </p>
+
+
+        <a
+            class="button"
+            href="https://github.com/Vr3xMelab/VMLs_ISMAR26"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            View Supplementary Files
+
+        </a>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+
+    ISMAR 2026 Conference Paper
+
+
+</footer>
+
+
+</body>
+
+</html>
