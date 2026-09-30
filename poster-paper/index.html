@@ -6,22 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-        ISMAR26 Poster Paper
+        Coherent and Reversible AI-assisted XR Scene Authoring by Spatial Dependency Graphs
     </title>
-
-    <meta
-        name="description"
-        content="ISMAR 2026 Poster Paper project page."
-    >
 
     <style>
 
         * {
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
@@ -35,307 +26,99 @@
                 Arial,
                 sans-serif;
 
-            background: #ffffff;
+            background: white;
             color: #222;
-            line-height: 1.65;
-        }
-
-        a {
-            color: #1565c0;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
 
         .container {
-            width: min(1050px, 90%);
+            width: min(1000px, 90%);
             margin: 0 auto;
         }
 
-
-        /* =========================
-           TOP NAVIGATION
-        ========================== */
-
-        .topbar {
-            border-bottom: 1px solid #eee;
-            padding: 18px 0;
-        }
-
-        .topbar-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .site-name {
-            font-weight: 700;
-            color: #222;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-
-        /* =========================
-           HERO
-        ========================== */
-
         .hero {
             text-align: center;
-            padding: 70px 0 45px;
+            padding: 70px 0 40px;
         }
 
         .paper-type {
-            display: inline-block;
-            margin-bottom: 18px;
-            padding: 7px 14px;
-            border-radius: 999px;
-            background: #f2f2f2;
-            color: #555;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
+            color: #666;
+            margin-bottom: 18px;
         }
 
-        .hero h1 {
-            font-size: clamp(2.1rem, 5vw, 3.4rem);
-            line-height: 1.15;
+        h1 {
+            max-width: 950px;
             margin: 0 auto 25px;
-            max-width: 1000px;
-            font-weight: 750;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            line-height: 1.15;
             letter-spacing: -0.03em;
         }
 
         .authors {
             font-size: 1.1rem;
-            margin-top: 16px;
             line-height: 1.8;
         }
 
         .affiliations {
-            margin-top: 10px;
-            color: #555;
-            font-size: 0.98rem;
+            margin-top: 8px;
+            color: #666;
         }
 
         .venue {
             margin-top: 10px;
-            font-size: 1.05rem;
             font-weight: 600;
         }
-
-
-        /* =========================
-           BUTTONS
-        ========================== */
 
         .buttons {
             margin-top: 28px;
             display: flex;
             justify-content: center;
+            gap: 12px;
             flex-wrap: wrap;
-            gap: 10px;
         }
 
         .button {
             display: inline-block;
-            padding: 10px 18px;
+            padding: 11px 20px;
             border-radius: 999px;
             background: #222;
-            color: #fff;
+            color: white;
+            text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 500;
             transition: 0.2s ease;
         }
 
         .button:hover {
-            background: #444;
-            text-decoration: none;
+            background: #555;
             transform: translateY(-1px);
         }
 
-
-        /* =========================
-           SECTIONS
-        ========================== */
-
-        section {
-            margin: 75px 0;
-        }
-
-        section h2 {
+        .teaser-section {
+            margin: 25px 0 80px;
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 32px;
-            letter-spacing: -0.02em;
         }
 
-        .section-text {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 1.04rem;
-        }
-
-
-        /* =========================
-           FIGURES
-        ========================== */
-
-        .figure {
+        .teaser {
             width: 100%;
+            max-width: 1000px;
             display: block;
             margin: 0 auto;
-            border-radius: 8px;
         }
-
-        .figure-medium {
-            width: min(850px, 100%);
-            display: block;
-            margin: 0 auto;
-            border-radius: 8px;
-        }
-
-        .caption {
-            max-width: 900px;
-            text-align: center;
-            margin: 14px auto 0;
-            color: #666;
-            font-size: 0.94rem;
-        }
-
-        .tagline {
-            max-width: 900px;
-            margin: 28px auto 0;
-            text-align: center;
-            font-size: 1.22rem;
-            line-height: 1.55;
-            font-weight: 500;
-        }
-
-
-        /* =========================
-           CONTRIBUTIONS
-        ========================== */
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-            margin-top: 40px;
-        }
-
-        .feature-card {
-            border: 1px solid #e4e4e4;
-            border-radius: 12px;
-            padding: 25px;
-            background: #fafafa;
-        }
-
-        .feature-card h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
-        }
-
-        .feature-card p {
-            margin-bottom: 0;
-        }
-
-
-        /* =========================
-           HIGHLIGHT
-        ========================== */
-
-        .highlight {
-            padding: 28px;
-            margin: 35px auto;
-            max-width: 900px;
-            border-left: 4px solid #222;
-            background: #f6f6f6;
-            border-radius: 6px;
-        }
-
-
-        /* =========================
-           VIDEO
-        ========================== */
-
-        .video-wrapper {
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        .video-wrapper video {
-            width: 100%;
-            display: block;
-            border-radius: 10px;
-            background: #000;
-        }
-
-
-        /* =========================
-           BIBTEX
-        ========================== */
-
-        pre {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 25px;
-            overflow-x: auto;
-            background: #f3f3f3;
-            border-radius: 10px;
-            font-family:
-                "SFMono-Regular",
-                Consolas,
-                "Liberation Mono",
-                monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================== */
 
         footer {
-            margin-top: 90px;
-            padding: 35px 0;
             border-top: 1px solid #eee;
+            margin-top: 70px;
+            padding: 30px 0;
             text-align: center;
-            color: #777;
+            color: #888;
             font-size: 0.9rem;
         }
 
-
-        /* =========================
-           MOBILE
-        ========================== */
-
-        @media (max-width: 800px) {
+        @media (max-width: 600px) {
 
             .hero {
                 padding-top: 45px;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .topbar-inner {
-                justify-content: center;
-                text-align: center;
             }
 
         }
@@ -348,40 +131,6 @@
 <body>
 
 
-<!-- =========================================================
-     TOP NAV
-========================================================= -->
-
-<div class="topbar">
-
-    <div class="container topbar-inner">
-
-        <a class="site-name" href="../">
-            ISMAR 2026
-        </a>
-
-        <div class="nav-links">
-
-            <a href="../conference-paper/">
-                Conference Paper
-            </a>
-
-            <a href="../poster-paper/">
-                Poster Paper
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
 <header class="hero">
 
     <div class="container">
@@ -391,27 +140,22 @@
         </div>
 
         <h1>
-            Your Poster Paper Title
+            Coherent and Reversible AI-assisted XR Scene Authoring
+            by Spatial Dependency Graphs
         </h1>
 
         <div class="authors">
-
-            <a href="#">
-                Author One
-            </a>,
-
-            <a href="#">
-                Author Two
-            </a>,
-
-            <a href="#">
-                Author Three
-            </a>
-
+            Mine Dastan ·
+            Dongyu Qiu ·
+            Haiyan Jiang ·
+            Michele Fiorentino ·
+            Frank Guan
         </div>
 
         <div class="affiliations">
-            Your Institution
+            Polytechnic University of Bari ·
+            Singapore Institute of Technology ·
+            Hong Kong Polytechnic University
         </div>
 
         <div class="venue">
@@ -422,7 +166,7 @@
 
             <a
                 class="button"
-                href="../PosterPaper.pdf"
+                href="../Paper.pdf"
                 target="_blank"
             >
                 Paper
@@ -430,18 +174,10 @@
 
             <a
                 class="button"
-                href="../Poster.pdf"
+                href="../P8346_Teaser.mp4"
                 target="_blank"
             >
-                Poster
-            </a>
-
-            <a
-                class="button"
-                href="../PosterTeaser.mp4"
-                target="_blank"
-            >
-                Video
+                Teaser Video
             </a>
 
         </div>
@@ -451,296 +187,24 @@
 </header>
 
 
-
 <main class="container">
 
-
-<!-- =========================================================
-     TEASER
-========================================================= -->
-
-<section>
-
-    <img
-        class="figure"
-        src="../assets/poster-teaser.png"
-        alt="Poster paper teaser"
-    >
-
-    <p class="tagline">
-        Add one concise sentence here describing the main contribution
-        of the poster paper.
-    </p>
-
-</section>
-
-
-
-<!-- =========================================================
-     ABSTRACT
-========================================================= -->
-
-<section id="abstract">
-
-    <h2>Abstract</h2>
-
-    <div class="section-text">
-
-        <p>
-            Insert the abstract of the ISMAR 2026 poster paper here.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     MOTIVATION
-========================================================= -->
-
-<section id="motivation">
-
-    <h2>Motivation</h2>
-
-    <div class="section-text">
-
-        <p>
-            Briefly explain the problem addressed by the work and why
-            it is relevant for extended reality, mixed reality, or
-            human-computer interaction.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     METHOD
-========================================================= -->
-
-<section id="method">
-
-    <h2>Approach</h2>
-
-    <img
-        class="figure-medium"
-        src="../assets/poster-method.png"
-        alt="Poster paper method"
-    >
-
-    <p class="caption">
-        Overview of the proposed approach.
-    </p>
-
-    <div class="section-text">
-
-        <p>
-            Explain the main method or system in a short and
-            accessible way. The project page should summarize the
-            poster rather than reproduce the full paper.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CONTRIBUTIONS
-========================================================= -->
-
-<section id="contributions">
-
-    <h2>Key Contributions</h2>
-
-    <div class="feature-grid">
-
-        <div class="feature-card">
-
-            <h3>Contribution 1</h3>
-
-            <p>
-                Describe the first major contribution of the work.
-            </p>
-
-        </div>
-
-
-        <div class="feature-card">
-
-            <h3>Contribution 2</h3>
-
-            <p>
-                Describe the second major contribution of the work.
-            </p>
-
-        </div>
-
-
-        <div class="feature-card">
-
-            <h3>Contribution 3</h3>
-
-            <p>
-                Describe the third major contribution or main result.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     RESULTS
-========================================================= -->
-
-<section id="results">
-
-    <h2>Results</h2>
-
-    <img
-        class="figure-medium"
-        src="../assets/poster-results.png"
-        alt="Poster paper results"
-    >
-
-    <p class="caption">
-        Main qualitative or quantitative results.
-    </p>
-
-    <div class="section-text">
-
-        <p>
-            Summarize the most relevant findings here.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     HIGHLIGHT
-========================================================= -->
-
-<section>
-
-    <div class="highlight">
-
-        <strong>Main takeaway.</strong>
-
-        <br><br>
-
-        Add one short statement here that communicates the central
-        result or implication of the poster.
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     VIDEO
-========================================================= -->
-
-<section id="video">
-
-    <h2>Video</h2>
-
-    <div class="video-wrapper">
-
-        <video
-            controls
-            preload="metadata"
-        >
-
-            <source
-                src="../PosterTeaser.mp4"
-                type="video/mp4"
-            >
-
-            Your browser does not support the video tag.
-
-        </video>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     POSTER
-========================================================= -->
-
-<section id="poster">
-
-    <h2>Poster</h2>
-
-    <a
-        href="../Poster.pdf"
-        target="_blank"
-    >
+    <section class="teaser-section">
 
         <img
-            class="figure-medium"
-            src="../assets/poster-preview.png"
-            alt="ISMAR 2026 poster preview"
+            class="teaser"
+            src="../assets/teaser.png"
+            alt="Teaser figure"
         >
 
-    </a>
-
-    <p class="caption">
-        Click the poster to open the full-resolution PDF.
-    </p>
-
-</section>
-
-
-
-<!-- =========================================================
-     CITATION
-========================================================= -->
-
-<section id="citation">
-
-    <h2>Citation</h2>
-
-<pre>
-@inproceedings{yourname2026poster,
-    title     = {Your Poster Paper Title},
-    author    = {Author One and Author Two and Author Three},
-    booktitle = {2026 IEEE International Symposium on Mixed and Augmented Reality (ISMAR)},
-    year      = {2026}
-}
-</pre>
-
-</section>
-
+    </section>
 
 </main>
 
 
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
 <footer>
 
-    <div class="container">
-        ISMAR 2026 Poster Paper
-    </div>
+    ISMAR 2026 Poster Paper
 
 </footer>
 
