@@ -9,10 +9,19 @@
         Coherent and Reversible AI-assisted XR Scene Authoring by Spatial Dependency Graphs
     </title>
 
+    <meta
+        name="description"
+        content="ISMAR 2026 Poster Paper - Coherent and Reversible AI-assisted XR Scene Authoring by Spatial Dependency Graphs."
+    >
+
     <style>
 
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -25,9 +34,9 @@
                 Helvetica,
                 Arial,
                 sans-serif;
-
-            background: white;
+            background: #ffffff;
             color: #222;
+            line-height: 1.6;
         }
 
         .container {
@@ -80,12 +89,13 @@
 
         .button {
             display: inline-block;
-            padding: 11px 20px;
+            padding: 11px 21px;
             border-radius: 999px;
             background: #222;
             color: white;
             text-decoration: none;
             font-size: 0.95rem;
+            font-weight: 500;
             transition: 0.2s ease;
         }
 
@@ -95,7 +105,7 @@
         }
 
         .teaser-section {
-            margin: 25px 0 80px;
+            margin: 20px 0 60px;
             text-align: center;
         }
 
@@ -104,21 +114,98 @@
             max-width: 1000px;
             display: block;
             margin: 0 auto;
+            border-radius: 6px;
+        }
+
+        .description {
+            max-width: 850px;
+            margin: 60px auto;
+            text-align: center;
+        }
+
+        .description h2 {
+            font-size: 1.9rem;
+            margin-bottom: 20px;
+        }
+
+        .description p {
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .feature {
+            padding: 20px 15px;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .feature strong {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 1rem;
+        }
+
+        .feature span {
+            color: #666;
+            font-size: 0.92rem;
+        }
+
+        .video-section {
+            margin: 75px 0;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 1.9rem;
+            margin-bottom: 25px;
+        }
+
+        .video-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            border-radius: 10px;
+            background: #000;
         }
 
         footer {
             border-top: 1px solid #eee;
-            margin-top: 70px;
+            margin-top: 80px;
             padding: 30px 0;
             text-align: center;
             color: #888;
             font-size: 0.9rem;
         }
 
+        @media (max-width: 800px) {
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
         @media (max-width: 600px) {
 
             .hero {
                 padding-top: 45px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
             }
 
         }
@@ -166,7 +253,7 @@
 
             <a
                 class="button"
-                href="../Paper.pdf"
+                href="Paper.pdf"
                 target="_blank"
             >
                 Paper
@@ -174,8 +261,7 @@
 
             <a
                 class="button"
-                href="../P8346_Teaser.mp4"
-                target="_blank"
+                href="#video"
             >
                 Teaser Video
             </a>
@@ -193,9 +279,99 @@
 
         <img
             class="teaser"
-            src="../assets/teaser.png"
-            alt="Teaser figure"
+            src="teaser.png"
+            alt="Coherent and reversible AI-assisted XR scene authoring teaser"
         >
+
+    </section>
+
+
+    <section class="description">
+
+        <h2>
+            Spatial Dependency Graphs for XR Authoring
+        </h2>
+
+        <p>
+            We introduce a Spatial Dependency Graph (SDG) for AI-assisted
+            XR scene authoring that explicitly represents support
+            dependencies between objects. The SDG enables authoring
+            operations to propagate coherently across spatially related
+            objects while preserving reversible scene states.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                <strong>
+                    Co-motion
+                </strong>
+
+                <span>
+                    Dependent objects follow their support object during movement.
+                </span>
+            </div>
+
+            <div class="feature">
+                <strong>
+                    Re-support
+                </strong>
+
+                <span>
+                    Dependent objects can be reassigned to another compatible support.
+                </span>
+            </div>
+
+            <div class="feature">
+                <strong>
+                    Removal
+                </strong>
+
+                <span>
+                    Unsupported objects are removed when no valid support remains.
+                </span>
+            </div>
+
+            <div class="feature">
+                <strong>
+                    Reverse
+                </strong>
+
+                <span>
+                    Previous coherent scene states can be restored through the timeline.
+                </span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section
+        class="video-section"
+        id="video"
+    >
+
+        <h2>
+            Teaser Video
+        </h2>
+
+        <div class="video-wrapper">
+
+            <video
+                controls
+                preload="metadata"
+            >
+                <source
+                    src="P8346_Teaser.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support HTML5 video.
+
+            </video>
+
+        </div>
 
     </section>
 
